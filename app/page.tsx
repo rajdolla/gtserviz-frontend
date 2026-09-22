@@ -284,10 +284,75 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="py-8 text-center text-xs text-zinc-400 border-t border-zinc-100">
-        © {new Date().getFullYear()} GTServiz • Earn daily with your phone
-      </footer>
+{/* FOOTER - Like AimToGet.com */}
+<footer className="bg-[#0a0a0a] text-zinc-300 pt-16 pb-8">
+  <div className="max-w-7xl mx-auto px-6">
+    <div className="grid grid-cols-2 md:grid-cols-5 gap-10">
+
+      {/* Brand */}
+      <div className="col-span-2">
+        <div className="flex items-center gap-2">
+          <Image src="/logo.png" alt="GT" width={40} height={40} className="rounded-full bg-white"/>
+          <span className="text-white font-black text-[20px]">GTServiz</span>
+        </div>
+        <p className="text-sm text-zinc-400 mt-4 leading-relaxed max-w-[300px]">
+          Fastest and easiest way to buy airtime, data, pay TV & electricity bills. Accept payments for your business today.
+        </p>
+        <div className="flex gap-3 mt-6">
+          <a href="#" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#00A54F] transition">𝕏</a>
+          <a href="#" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#00A54F] transition">f</a>
+          <a href="#" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#00A54F] transition">IG</a>
+          <a href="#" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#00A54F] transition">▶</a>
+        </div>
+      </div>
+
+      {/* Services */}
+      <div>
+        <h4 className="text-white font-bold mb-4">Services</h4>
+        <ul className="space-y-3 text-sm text-zinc-400">
+          <li><Link href="#" className="hover:text-white">Airtime VTU</Link></li>
+          <li><Link href="#" className="hover:text-white">Data Bundles</Link></li>
+          <li><Link href="#" className="hover:text-white">Cable TV Subscription</Link></li>
+          <li><Link href="#" className="hover:text-white">Electricity Bills</Link></li>
+          <li><Link href="#" className="hover:text-white">Education Pins</Link></li>
+          <li><Link href="#" className="hover:text-white">Airtime to Cash</Link></li>
+        </ul>
+      </div>
+
+      {/* Company */}
+      <div>
+        <h4 className="text-white font-bold mb-4">Company</h4>
+        <ul className="space-y-3 text-sm text-zinc-400">
+          <li><Link href="#" className="hover:text-white">About Us</Link></li>
+          <li><Link href="#" className="hover:text-white">Become an Agent</Link></li>
+          <li><Link href="#" className="hover:text-white">Pricing / Data Plans</Link></li>
+          <li><Link href="#" className="hover:text-white">API Documentation</Link></li>
+          <li><Link href="#" className="hover:text-white">Our Blog</Link></li>
+        </ul>
+      </div>
+
+      {/* Support */}
+      <div>
+        <h4 className="text-white font-bold mb-4">Support</h4>
+        <ul className="space-y-3 text-sm text-zinc-400">
+          <li><Link href="#" className="hover:text-white">Help Center</Link></li>
+          <li><Link href="#" className="hover:text-white">Contact Us</Link></li>
+          <li className="pt-2 text-white font-bold">07012222025</li>
+          <li className="text-[#00A54F]">support@gtserviz.com</li>
+          <li className="text-sm mt-2">Mon - Sun, 8am - 10pm</li>
+        </ul>
+      </div>
     </div>
+
+    <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between gap-4 text-[12px] text-zinc-500">
+      <p>© 2026 GTServiz Technology Limited. All rights reserved. • RC: 1531451</p>
+      <div className="flex gap-6">
+        <Link href="#" className="hover:text-white">Privacy Policy</Link>
+        <Link href="#" className="hover:text-white">Terms of Service</Link>
+        <Link href="#" className="hover:text-white">Fees</Link>
+      </div>
+    </div>
+  </div>
+</footer>
   );
 }
