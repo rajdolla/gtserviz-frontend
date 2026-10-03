@@ -9,15 +9,53 @@ export default function Home() {
     <div className="min-h-screen bg-[#f2f7fb] text-[#0f2440]">
       <style>{`@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}@keyframes pulse-ring{0%{transform:scale(0.8);opacity:1}100%{transform:scale(2.3);opacity:0}}.float-anim{animation:float 4s ease-in-out infinite}.float-anim2{animation:float 4s ease-in-out infinite 1s}.float-anim3{animation:float 4s ease-in-out infinite 2s}.pulse-ring::before{content:'';position:absolute;inset:0;border-radius:9999px;background:#25D366;animation:pulse-ring 2s infinite}`}</style>
 
-      <header className="fixed top-0 w-full z-[100] bg-[#061e14] border-b border-white/10">
-        <div className="max-w-[1240px] mx-auto px-5 h-[64px] flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2.5"><div className="w-8 h-8 bg-white rounded-full overflow-hidden flex items-center justify-center"><Image src="/logo.png" alt="GT" width={32} height={32} /></div><span className="text-white font-black tracking-widest">GTSERVIZ</span></Link>
-          <nav className="hidden lg:flex gap-6 text-[13px] text-white/60"><Link href="#" className="text-[#00A54F] font-bold border-b-2 border-[#00A54F] py-5">Home</Link><Link href="#services" className="hover:text-white">Services</Link><Link href="#pricing" className="hover:text-white">Pricing</Link><Link href="#store" className="hover:text-white">Store</Link><Link href="#blog" className="hover:text-white">Blog</Link><Link href="#" className="hover:text-white">API</Link><Link href="#" className="hover:text-white">Reseller</Link></nav>
-          <div className="hidden lg:flex gap-3"><Link href="/login" className="text-white text-[13px] px-4">Login</Link><Link href="/signup" className="px-5 py-2.5 rounded-full bg-[#00A54F] text-white text-[12px] font-black">Create Account</Link></div>
-          <button onClick={()=>setOpen(!open)} className="lg:hidden w-10 h-10 rounded-full bg-white/10 text-white">{open?"✕":"☰"}</button>
-        </div>
-        {open && <div className="lg:hidden bg-[#0a2a1a] px-6 py-6 flex flex-col gap-4 text-white text-sm"><Link href="#">Home</Link><Link href="#services">Services</Link><Link href="#pricing">Pricing</Link><Link href="#store">Store</Link><Link href="#blog">Blog</Link><div className="flex gap-3 mt-3 pt-4 border-t border-white/10"><Link href="/login" className="flex-1 py-3 rounded-full border text-center">Login</Link><Link href="/signup" className="flex-1 py-3 rounded-full bg-[#00A54F] text-center font-black">Create Account</Link></div></div>}
-      </header>
+    <header className="fixed top-0 w-full z-[100] bg-[#061e14]/95 backdrop-blur-md border-b border-white/[0.07]">
+  <div className="max-w-[1280px] mx-auto px-6 h-[72px] flex items-center justify-between">
+    {/* Logo */}
+    <Link href="/" className="flex items-center gap-3">
+      <div className="w-9 h-9 bg-white rounded-full overflow-hidden flex items-center justify-center">
+        <Image src="/logo.png" alt="GT" width={36} height={36} />
+      </div>
+      <span className="text-white font-black tracking-[0.15em] text-[14px]">GTSERVIZ</span>
+    </Link>
+
+    {/* Nav - Centered with proper gap */}
+    <nav className="hidden lg:flex items-center gap-8 text-[13.5px] font-medium">
+      <Link href="#" className="text-[#00A54F] font-bold relative after:absolute after:-bottom-[21px] after:left-0 after:w-full after:h-[2.5px] after:bg-[#00A54F]">Home</Link>
+      <Link href="#services" className="text-white/60 hover:text-white transition">Services</Link>
+      <Link href="#pricing" className="text-white/60 hover:text-white transition">Pricing</Link>
+      <Link href="#store" className="text-white/60 hover:text-white transition">Store</Link>
+      <Link href="#blog" className="text-white/60 hover:text-white transition">Blog</Link>
+      <Link href="#" className="text-white/60 hover:text-white transition">API</Link>
+      <Link href="#" className="text-white/60 hover:text-white transition">Reseller</Link>
+    </nav>
+
+    {/* Actions */}
+    <div className="hidden lg:flex items-center gap-4">
+      <Link href="/login" className="text-white/80 hover:text-white text-[13px] font-medium px-4 py-2">Login</Link>
+      <Link href="/signup" className="px-6 py-3 rounded-full bg-[#00A54F] hover:bg-[#009346] text-white text-[13px] font-black transition shadow-[0_0_20px_rgba(0,165,79,0.3)]">Create Account</Link>
+    </div>
+
+    {/* Mobile */}
+    <button onClick={()=>setOpen(!open)} className="lg:hidden w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center">
+      {open? "✕" : "☰"}
+    </button>
+  </div>
+
+  {open && (
+    <div className="lg:hidden bg-[#0a2a1a] border-t border-white/10 px-6 py-6 flex flex-col gap-4 text-white text-[14px]">
+      <Link href="#" onClick={()=>setOpen(false)}>Home</Link>
+      <Link href="#services" onClick={()=>setOpen(false)}>Services</Link>
+      <Link href="#pricing" onClick={()=>setOpen(false)}>Pricing</Link>
+      <Link href="#store" onClick={()=>setOpen(false)}>Store</Link>
+      <Link href="#blog" onClick={()=>setOpen(false)}>Blog</Link>
+      <div className="flex gap-3 mt-3 pt-5 border-t border-white/10">
+        <Link href="/login" className="flex-1 py-3 rounded-full border border-white/20 text-center">Login</Link>
+        <Link href="/signup" className="flex-1 py-3 rounded-full bg-[#00A54F] text-center font-black">Create Account</Link>
+      </div>
+    </div>
+  )}
+</header>
 
       <section className="bg-[#061e14] relative pt-[64px] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0e3320] to-[#061e14]" />
@@ -41,8 +79,71 @@ export default function Home() {
 
       <section id="blog" className="max-w-[1240px] mx-auto px-5 py-16"><p className="text-[#00A54F] text-[11px] font-black">LATEST FROM BLOG</p><h2 className="text-[24px] font-black mt-1">Tips, News & Updates</h2><div className="grid md:grid-cols-3 gap-5 mt-8">{["How to start VTU business in 2026","Cheapest data plans this month","GTServiz API for developers"].map((t,i)=><div key={i} className="bg-white border rounded-xl p-5"><h4 className="font-black text-[14px]">{t}</h4><p className="text-[12px] text-slate-500 mt-2">Read more →</p></div>)}</div></section>
 
-      <footer className="bg-[#0b1f35] text-white/60 py-10 text-center text-[12px]">© 2026 GTSERVIZ • 07012222025 • www.gtserviz.com</footer>
-      <a href="https://wa.me/2347012222025" target="_blank" className="fixed bottom-6 right-6 z-[999] w-[60px] h-[60px] flex items-center justify-center"><div className="absolute w-full h-full pulse-ring rounded-full"></div><div className="relative w-[60px] h-[60px] bg-[#25D366] rounded-full flex items-center justify-center shadow-lg"><svg viewBox="0 0 32 32" className="w-[30px] h-[30px] fill-white"><path d="M16 2.9c-7.18 0-13 5.82-13 13 0 2.29.6 4.53 1.74 6.51L3 29l6.69-1.76A12.93 12.93 0 0016 29c7.18 0 13-5.82 13-13S23.18 2.9 16 2.9zm5.7 7.78c-.31-.16-1.85-.91-2.13-1.02-.29-.11-.5-.16-.7.16-.21.31-.81 1.02-.99 1.22-.18.21-.37.23-.68.08-.31-.16-1.32-.49-2.51-1.55-.93-.83-1.55-1.85-1.74-2.16-.18-.31-.02-.48.14-.64.14-.14.31-.37.47-.55.16-.18.21-.31.31-.52.1-.21.05-.39-.03-.55-.08-.16-.7-1.69-.96-2.31-.25-.61-.51-.53-.7-.54h-.6c-.21 0-.55.08-.83.39-.29.31-1.09 1.07-1.09 2.6s1.12 3.02 1.27 3.23c.16.21 2.2 3.36 5.33 4.71.75.32 1.33.51 1.78.66.75.24 1.43.2 1.97.12.6-.09 1.85-.76 2.11-1.49.26-.73.26-1.36.18-1.49-.08-.13-.29-.21-.6-.36z"/></svg></div></a>
+     <footer className="bg-[#061e14] border-t border-white/[0.07] pt-16 pb-8">
+  <div className="max-w-[1280px] mx-auto px-6">
+    <div className="grid grid-cols-2 md:grid-cols-5 gap-10">
+
+      {/* Brand */}
+      <div className="col-span-2">
+        <div className="flex items-center gap-3">
+          <div className="w-9 h-9 bg-white rounded-full overflow-hidden flex items-center justify-center">
+            <Image src="/logo.png" alt="GT" width={36} height={36} />
+          </div>
+          <span className="text-white font-black tracking-[0.15em] text-[14px]">GTSERVIZ</span>
+        </div>
+        <p className="text-white/50 text-[13px] leading-[1.6] mt-4 max-w-[280px]">
+          Fast, cheap & secure VTU services. Buy airtime, data, pay bills and convert airtime to cash instantly.
+        </p>
+        <div className="flex gap-3 mt-5">
+          <a href="#" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:bg-[#00A54F] hover:text-white transition">𝕏</a>
+          <a href="#" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:bg-[#00A54F] hover:text-white transition">f</a>
+          <a href="#" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:bg-[#00A54F] hover:text-white transition">IG</a>
+        </div>
+      </div>
+
+      {/* Services */}
+      <div>
+        <h4 className="text-white font-black text-[12px] tracking-widest mb-5">SERVICES</h4>
+        <div className="flex flex-col gap-3 text-[13px] text-white/50">
+          <Link href="#" className="hover:text-white transition">Airtime Top-up</Link>
+          <Link href="#" className="hover:text-white transition">Data Bundles</Link>
+          <Link href="#" className="hover:text-white transition">Cable TV</Link>
+          <Link href="#" className="hover:text-white transition">Electricity</Link>
+          <Link href="#" className="hover:text-white transition">Airtime to Cash</Link>
+        </div>
+      </div>
+
+      {/* Company */}
+      <div>
+        <h4 className="text-white font-black text-[12px] tracking-widest mb-5">COMPANY</h4>
+        <div className="flex flex-col gap-3 text-[13px] text-white/50">
+          <Link href="#" className="hover:text-white transition">About Us</Link>
+          <Link href="#pricing" className="hover:text-white transition">Pricing</Link>
+          <Link href="#store" className="hover:text-white transition">Store</Link>
+          <Link href="#blog" className="hover:text-white transition">Blog</Link>
+          <Link href="#" className="hover:text-white transition">API Docs</Link>
+        </div>
+      </div>
+
+      {/* Support */}
+      <div>
+        <h4 className="text-white font-black text-[12px] tracking-widest mb-5">SUPPORT</h4>
+        <div className="flex flex-col gap-3 text-[13px] text-white/50">
+          <p>07012222025</p>
+          <p>support@gtserviz.com</p>
+          <p>www.gtserviz.com</p>
+          <Link href="https://wa.me/2347012222025" className="mt-2 inline-flex px-4 py-2 rounded-full bg-[#25D366]/10 border border-[#25D366]/20 text-[#25D366] text-[12px] font-bold w-fit">Chat on WhatsApp</Link>
+        </div>
+      </div>
     </div>
-  );
-}
+
+    <div className="mt-14 pt-8 border-t border-white/[0.07] flex flex-col md:flex-row justify-between items-center gap-4">
+      <p className="text-white/30 text-[12px]">© 2026 GTSERVIZ. All rights reserved. Built for Nigerians.</p>
+      <div className="flex gap-6 text-[12px] text-white/30">
+        <Link href="#" className="hover:text-white/60">Privacy Policy</Link>
+        <Link href="#" className="hover:text-white/60">Terms of Service</Link>
+        <Link href="#" className="hover:text-white/60">Refund Policy</Link>
+      </div>
+    </div>
+  </div>
+</footer>
