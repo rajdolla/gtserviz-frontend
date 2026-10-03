@@ -7,7 +7,7 @@ export default function Home() {
   const [open, setOpen] = useState(false);
   return (
     <div className="min-h-screen bg-[#f2f7fb] text-[#0f2440]">
-      <header className="fixed top-0 w-full z-[100] bg-[#061e14]/95 backdrop-blur-md border-b border-white/[0.07]">
+       <header className="fixed top-0 w-full z-[100] bg-[#061e14]/95 backdrop-blur-md border-b border-white/[0.07]">
         <div className="max-w-[1280px] mx-auto px-6 h-[72px] flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3">
             <div className="w-9 h-9 bg-white rounded-full overflow-hidden flex items-center justify-center">
@@ -16,11 +16,11 @@ export default function Home() {
             <span className="text-white font-black tracking-[0.15em] text-[14px]">GTSERVIZ</span>
           </Link>
           <nav className="hidden lg:flex items-center gap-8 text-[13.5px] font-medium">
-            <Link href="#" className="text-[#00A54F] font-bold">Home</Link>
-            <Link href="#services" className="text-white/60 hover:text-white transition">Services</Link>
-            <Link href="#pricing" className="text-white/60 hover:text-white transition">Pricing</Link>
-            <Link href="#store" className="text-white/60 hover:text-white transition">Store</Link>
-            <Link href="#blog" className="text-white/60 hover:text-white transition">Blog</Link>
+            <Link href="/" className="text-[#00A54F] font-bold">Home</Link>
+            <Link href="/#services" className="text-white/60 hover:text-white transition">Services</Link>
+            <Link href="/#pricing" className="text-white/60 hover:text-white transition">Pricing</Link>
+            <Link href="/#store" className="text-white/60 hover:text-white transition">Store</Link>
+            <Link href="/#blog" className="text-white/60 hover:text-white transition">Blog</Link>
             <Link href="/api" className="text-white/60 hover:text-white transition">API</Link>
             <Link href="#" className="text-white/60 hover:text-white transition">Reseller</Link>
           </nav>
@@ -34,11 +34,12 @@ export default function Home() {
         </div>
         {open && (
           <div className="lg:hidden bg-[#0a2a1a] border-t border-white/10 px-6 py-6 flex flex-col gap-4 text-white text-[14px]">
-            <Link href="#" onClick={()=>setOpen(false)}>Home</Link>
-            <Link href="#services" onClick={()=>setOpen(false)}>Services</Link>
-            <Link href="#pricing" onClick={()=>setOpen(false)}>Pricing</Link>
-            <Link href="#store" onClick={()=>setOpen(false)}>Store</Link>
-            <Link href="#blog" onClick={()=>setOpen(false)}>Blog</Link>
+            <Link href="/" onClick={()=>setOpen(false)}>Home</Link>
+            <Link href="/#services" onClick={()=>setOpen(false)}>Services</Link>
+            <Link href="/#pricing" onClick={()=>setOpen(false)}>Pricing</Link>
+            <Link href="/#store" onClick={()=>setOpen(false)}>Store</Link>
+            <Link href="/#blog" onClick={()=>setOpen(false)}>Blog</Link>
+            <Link href="/api" onClick={()=>setOpen(false)} className="text-[#00ff88] font-bold">API →</Link>
             <div className="flex gap-3 mt-3 pt-5 border-t border-white/10">
               <Link href="/login" className="flex-1 py-3 rounded-full border border-white/20 text-center">Login</Link>
               <Link href="/signup" className="flex-1 py-3 rounded-full bg-[#00A54F] text-center font-black">Create Account</Link>
