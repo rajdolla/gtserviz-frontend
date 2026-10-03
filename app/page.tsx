@@ -57,7 +57,7 @@ export default function Home() {
   )}
 </header>
 
-      <section className="bg-[#061e14] relative pt-[64px] overflow-hidden">
+      <section className="bg-[#061e14] relative pt-[72px] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0e3320] to-[#061e14]" />
         <div className="max-w-[1240px] mx-auto px-5 py-12 md:py-20 grid md:grid-cols-2 gap-10 items-center relative z-10">
           <div className="text-center md:text-left"><div className="inline-flex px-3 py-1 rounded-full border border-[#00A54F]/40 bg-[#00A54F]/10 text-[#7cffb0] text-[10px] font-black">● FAST, CHEAP & SECURE</div><h1 className="text-white text-[32px] md:text-[50px] font-black leading-[1.05] mt-5">Fast, Cheap & Secure<br/>Airtime, Data, Cable TV<br/>and <span className="text-[#00A54F]">More!</span></h1><p className="text-white/60 text-[14px] mt-4 max-w-[420px] mx-auto md:mx-0">Top up airtime, buy data, pay bills, and more — instant, affordable, and reliable. All VTU services in one place.</p><div className="flex gap-3 mt-7 justify-center md:justify-start"><Link href="/signup" className="px-7 py-3.5 rounded-full bg-[#00A54F] text-white font-black text-[13px]">Get Started →</Link><Link href="#pricing" className="px-7 py-3.5 rounded-full bg-white/10 text-white font-black text-[13px] border border-white/10">View Pricing</Link></div></div>
@@ -71,7 +71,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="max-w-[1240px] mx-auto px-5 -mt-8 relative z-20 grid grid-cols-2 md:grid-cols-6 gap-3">{["Airtime","Data","Cable TV","Airtime to Cash","Electricity","Exam Pins"].map((t,i)=><div key={i} className="bg-white rounded-xl border p-4 text-center shadow-sm"><p className="font-black text-[12px]">{t}</p><p className="text-[10px] text-slate-500 mt-1">Instant delivery</p></div>)}</section>
+      <section id="services" className="max-w-[1240px] mx-auto px-5 -mt-8 relative z-20 grid grid-cols-2 md:grid-cols-6 gap-3">
 
       <section id="pricing" className="max-w-[1240px] mx-auto px-5 py-16 bg-[#eef5f0] rounded-[24px] mt-12"><p className="text-center text-[#00A54F] text-[11px] font-black">AFFORDABLE PRICING</p><h2 className="text-center text-[26px] font-black mt-2">Best rates for all services</h2><div className="grid md:grid-cols-3 gap-5 mt-10 max-w-[1000px] mx-auto"><div className="bg-white border rounded-2xl p-6"><h3 className="font-black">MTN Data</h3><p className="text-[28px] font-black text-[#065F36] mt-2">₦275 / 1GB</p><Link href="/signup" className="block mt-4 py-3 rounded-full bg-[#e6f6ec] text-center font-black text-[12px] text-[#065F36]">Buy Now</Link></div><div className="bg-[#061e14] text-white rounded-2xl p-6 md:scale-105 shadow-xl"><h3 className="font-black">Airtel Data</h3><p className="text-[28px] font-black text-[#00FF88] mt-2">₦280 / 1GB</p><Link href="/signup" className="block mt-4 py-3 rounded-full bg-[#00A54F] text-center font-black text-[12px]">Buy Now</Link></div><div className="bg-white border rounded-2xl p-6"><h3 className="font-black">Glo Data</h3><p className="text-[28px] font-black text-[#065F36] mt-2">₦270 / 1GB</p><Link href="/signup" className="block mt-4 py-3 rounded-full bg-[#e6f6ec] text-center font-black text-[12px] text-[#065F36]">Buy Now</Link></div></div></section>
 
