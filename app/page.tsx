@@ -71,7 +71,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="services" className="max-w-[1240px] mx-auto px-5 -mt-8 relative z-20 grid grid-cols-2 md:grid-cols-6 gap-3">
+     <section id="services" className="max-w-[1240px] mx-auto px-5 -mt-8 relative z-20 grid grid-cols-2 md:grid-cols-6 gap-3">
 
       <section id="pricing" className="max-w-[1240px] mx-auto px-5 py-16 bg-[#eef5f0] rounded-[24px] mt-12"><p className="text-center text-[#00A54F] text-[11px] font-black">AFFORDABLE PRICING</p><h2 className="text-center text-[26px] font-black mt-2">Best rates for all services</h2><div className="grid md:grid-cols-3 gap-5 mt-10 max-w-[1000px] mx-auto"><div className="bg-white border rounded-2xl p-6"><h3 className="font-black">MTN Data</h3><p className="text-[28px] font-black text-[#065F36] mt-2">₦275 / 1GB</p><Link href="/signup" className="block mt-4 py-3 rounded-full bg-[#e6f6ec] text-center font-black text-[12px] text-[#065F36]">Buy Now</Link></div><div className="bg-[#061e14] text-white rounded-2xl p-6 md:scale-105 shadow-xl"><h3 className="font-black">Airtel Data</h3><p className="text-[28px] font-black text-[#00FF88] mt-2">₦280 / 1GB</p><Link href="/signup" className="block mt-4 py-3 rounded-full bg-[#00A54F] text-center font-black text-[12px]">Buy Now</Link></div><div className="bg-white border rounded-2xl p-6"><h3 className="font-black">Glo Data</h3><p className="text-[28px] font-black text-[#065F36] mt-2">₦270 / 1GB</p><Link href="/signup" className="block mt-4 py-3 rounded-full bg-[#e6f6ec] text-center font-black text-[12px] text-[#065F36]">Buy Now</Link></div></div></section>
 
