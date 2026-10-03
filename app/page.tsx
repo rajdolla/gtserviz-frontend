@@ -21,7 +21,7 @@ export default function Home() {
             <Link href="#pricing" className="text-white/60 hover:text-white transition">Pricing</Link>
             <Link href="#store" className="text-white/60 hover:text-white transition">Store</Link>
             <Link href="#blog" className="text-white/60 hover:text-white transition">Blog</Link>
-            <Link href="#" className="text-white/60 hover:text-white transition">API</Link>
+            <Link href="/api" className="text-white/60 hover:text-white transition">API</Link>
             <Link href="#" className="text-white/60 hover:text-white transition">Reseller</Link>
           </nav>
           <div className="hidden lg:flex items-center gap-4">
