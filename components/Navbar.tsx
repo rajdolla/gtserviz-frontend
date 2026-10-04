@@ -12,7 +12,7 @@ export default function Navbar({ active = "" }: { active?: string }) {
     <header className="fixed top-0 w-full z-[100] bg-[#061e14] border-b border-white/5 h-[72px]">
       <div className="max-w-[1280px] mx-auto px-6 h-full flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <div className="w-9 h-9 bg-white rounded-full overflow-hidden flex items-center justify-center"><Image src="/logo.png" alt="GT" width={36} height={36} /></div>
+          <div className="w-9 h-9 bg-white rounded-full flex items-center justify-center font-black text-[#061e14] text-[12px]">GT</div>
           <span className="text-white font-black tracking-[0.15em] text-[14px]">GTSERVIZ</span>
         </Link>
         <nav className="hidden lg:flex items-center gap-6 font-medium">
