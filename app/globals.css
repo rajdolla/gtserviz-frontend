@@ -1,8 +1,11 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-body {
-  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
-  -webkit-font-smoothing: antialiased;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  background: #fff;
+  color: #061e14;
+}
+a { text-decoration: none; }
