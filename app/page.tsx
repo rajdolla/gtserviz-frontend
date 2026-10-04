@@ -1,56 +1,39 @@
 "use client";
-import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
-import Footer from "../components/Footer";
+import Footer from "../../components/Footer";
+import Navbar from "../../components/Navbar";
 
-export default function Home() {
-  const [open, setOpen] = useState(false);
-  const [faqOpen, setFaqOpen] = useState<number | null>(0);
+const products = [
+  { name:"MTN 1GB - 30 Days", price:"₦350", cat:"Data Bundle", popular:true },
+  { name:"Airtel 2GB - 30 Days", price:"₦700", cat:"Data Bundle", popular:false },
+  { name:"Glo 3.5GB - 30 Days", price:"₦1,000", cat:"Data Bundle", popular:true },
+  { name:"DSTV Compact", price:"₦10,500", cat:"Cable TV", popular:false },
+];
 
-  const faqs = [
-    { q:"How fast is delivery?", a:"All transactions are instant. Airtime & data in <5 seconds, electricity token in 10 seconds." },
-    { q:"What are your data rates?", a:"MTN 1GB from ₦250, Airtel 1GB from ₦250, Glo 1GB from ₦250, 9mobile 1GB from ₦250." },
-    { q:"How do I become a reseller?", a:"Sign up, upgrade to reseller in dashboard, you get your own website and API key." },
-    { q:"Do you have an API?", a:"Yes! REST API for airtime, data, cable, electricity. See /api page." },
-    { q:"Is my wallet safe?", a:"Bank-grade security, 2FA, auto-refund for failed transactions." },
-  ];
-
-  const links = [
-    { name:"Home", href:"/" },
-    { name:"Store", href:"/store" },
-    { name:"Pricing", href:"/pricing" },
-    { name:"API", href:"/api" },
-    { name:"Blog", href:"/blog" },
-    { name:"Become a Reseller", href:"/reseller" },
-  ];
-
+export default function StorePage(){
+  const [cart,setCart]=useState(0);
   return (
-    <div className="min-h-screen bg-white">
-      <header className="fixed top-0 w-full z-[100] bg-[#061e14] border-b border-white/10 h-[68px]">
-        <div className="max-w-[1280px] mx-auto px-6 h-full flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2.5">
-            <div className="w-9 h-9 bg-white rounded-full flex items-center justify-center overflow-hidden">
-              <Image src="/logo.png" alt="GTSERVIZ" width={36} height={36} className="object-contain" />
-            </div>
-            <span className="text-white font-black tracking-[0.15em] text-[13.5px]">GTSERVIZ</span>
-          </Link>
-          <nav className="hidden lg:flex items-center gap-7">
-            {links.map((l)=>(
-              <Link key={l.name} href={l.href} className="text-[13px] text-white/60 hover:text-white">{l.name}</Link>
-            ))}
-          </nav>
-          <div className="hidden lg:flex items-center gap-3">
-            <Link href="/login" className="text-white/70 text-[13px] font-bold px-4">Login</Link>
-            <Link href="/signup" className="px-5 py-2.5 rounded-full bg-[#00A54F] text-white text-[13px] font-black">Create Account</Link>
-          </div>
-          <button onClick={()=>setOpen(!open)} className="lg:hidden w-10 h-10 rounded-full bg-white/10 text-white">{open?"✕":"☰"}</button>
+    <div className="min-h-screen bg-[#f8fafc]">
+      <Navbar active="Store" />
+      <section className="pt-[100px] max-w-[1280px] mx-auto px-6">
+        <div className="bg-[#061e14] rounded-[24px] p-8 flex justify-between items-center">
+          <div><h1 className="text-white text-[28px] font-black">Store</h1><p className="text-white/60 text-[13px]">Buy Data, Airtime & Bills</p></div>
+          <div className="px-4 py-2 rounded-full bg-white/10 text-white text-[12px]">Cart ({cart})</div>
         </div>
-        {open && (
-          <div className="lg:hidden bg-[#061e14] border-t border-white/10 px-6 py-6 space-y-3">
-            {links.map((l)=><Link key={l.name} href={l.href} className="block text-white/60 py-1">{l.name}</Link>)}
+      </section>
+      <section className="max-w-[1280px] mx-auto px-6 py-10 grid grid-cols-2 md:grid-cols-4 gap-4">
+        {products.map((p,i)=>(
+          <div key={i} className="bg-white rounded-2xl border p-4">
+            <p className="text-[10px] font-bold text-[#00A54F]">{p.cat}</p>
+            <h3 className="font-bold text-[13px] mt-1">{p.name}</h3>
+            <div className="flex justify-between mt-4"><p className="font-black">{p.price}</p><button onClick={()=>setCart(cart+1)} className="px-3 py-1.5 rounded-full bg-[#061e14] text-white text-[11px]">Add +</button></div>
           </div>
-        )}
+        ))}
+      </section>
+      <Footer />
+    </div>
+  );
+}
       </header>
 
       <section className="pt-[68px] bg-[#061e14] text-center">
