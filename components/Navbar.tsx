@@ -14,31 +14,26 @@ export default function Navbar({ active = "Home" }: { active?: string }) {
     { name:"Become a Reseller", href:"/reseller" },
   ];
   return (
-    <header className="fixed top-0 w-full z-[100] bg-[#061e14]/95 backdrop-blur-xl border-b border-white/[0.06] h-[68px]">
+    <header className="fixed top-0 w-full z-[100] bg-[#061e14] border-b border-white/10 h-[68px]">
       <div className="max-w-[1280px] mx-auto px-6 h-full flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2.5">
           <div className="w-9 h-9 bg-white rounded-full flex items-center justify-center overflow-hidden">
-            <Image src="/logo.png" alt="logo" width={36} height={36} />
+            <Image src="/logo.png" alt="logo" width={36} height={36} className="object-contain" />
           </div>
           <span className="text-white font-black tracking-[0.15em] text-[13.5px]">GTSERVIZ</span>
         </Link>
         <nav className="hidden lg:flex items-center gap-7">
-          {links.map(l => (
-            <Link key={l.name} href={l.href} className={`text-[13px] font-medium transition ${active===l.name? "text-[#00ff88] font-bold border-b-2 border-[#00ff88] pb-1" : "text-white/60 hover:text-white"}`}>{l.name}</Link>
+          {links.map(l=>(
+            <Link key={l.name} href={l.href} className={`text-[13px] ${active===l.name? "text-[#00ff88] font-bold" : "text-white/60 hover:text-white"}`}>{l.name}</Link>
           ))}
         </nav>
-        <div className="hidden lg:flex items-center gap-3">
-          <Link href="/login" className="text-white/70 text-[13px] font-bold px-4">Login</Link>
+        <div className="hidden lg:flex gap-3">
+          <Link href="/login" className="text-white/70 text-[13px] font-bold px-4 py-2.5">Login</Link>
           <Link href="/signup" className="px-5 py-2.5 rounded-full bg-[#00A54F] text-white text-[13px] font-black">Create Account</Link>
         </div>
         <button onClick={()=>setOpen(!open)} className="lg:hidden w-10 h-10 rounded-full bg-white/10 text-white">{open?"✕":"☰"}</button>
       </div>
-      {open && (
-        <div className="lg:hidden bg-[#061e14] border-t border-white/10 px-6 py-6 space-y-4">
-          {links.map(l=> <Link key={l.name} href={l.href} className="block text-white/60 py-1">{l.name}</Link>)}
-          <Link href="/signup" className="block text-center py-3 rounded-full bg-[#00A54F] text-white font-black">Create Account</Link>
-        </div>
-      )}
+      {open && <div className="lg:hidden bg-[#061e14] px-6 py-6 space-y-3 border-t border-white/10">{links.map(l=><Link key={l.name} href={l.href} className="block text-white/60">{l.name}</Link>)}</div>}
     </header>
   );
 }
