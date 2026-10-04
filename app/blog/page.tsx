@@ -2,19 +2,20 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import Footer from "../../components/Footer"; // <-- add this
 
-export default function Home() {
+const posts = [ ... ];
+
+export default function BlogPage(){
+  const [open,setOpen]=useState(false);
   return (
-    <>
-      <Navbar />
-      {/* your page content */}
-      <Footer />
-    </>
-  )
-}
+    <div className="min-h-screen bg-[#f8fafc]">
+      {/* your existing header + section code */}
 
+      <Footer />  {/* <-- add this before closing </div> */}
+    </div>
+  );
+}
 const posts = [
   { cat:"VTU BUSINESS", title:"How to Start a Profitable VTU Business in Nigeria in 2026", date:"Sep 28, 2026", read:"5 min read" },
   { cat:"API", title:"GTSERVIZ API: Integrate Airtime & Data in 10 Minutes", date:"Sep 20, 2026", read:"4 min read" },
