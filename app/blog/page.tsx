@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import Navbar from "../../components/Navbar";
 
 const posts = [
   { cat:"VTU BUSINESS", title:"How to Start a Profitable VTU Business in Nigeria in 2026", date:"Sep 28, 2026", read:"5 min read" },
