@@ -2,7 +2,18 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import Navbar from "../../components/Navbar";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+
+export default function Home() {
+  return (
+    <>
+      <Navbar />
+      {/* your page content */}
+      <Footer />
+    </>
+  )
+}
 
 export default function ResellerPage(){
   const [open,setOpen]=useState(false);
