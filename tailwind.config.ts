@@ -11,9 +11,9 @@ const config: Config = {
         brand: {
           dark: "#061e14",
           green: "#00A54F",
-          light: "#e6f6ec",
-        }
-      }
+          light: "#00ff88",
+        },
+      },
     },
   },
   plugins: [],
