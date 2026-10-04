@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import Navbar from "@/components/Navbar";
+import Navbar from "../components/Navbar";
 
 export default function Home() {
   return (
@@ -25,7 +25,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SERVICES - this makes the Services link work */}
+      {/* SERVICES */}
       <section id="services" className="py-20 max-w-[1280px] mx-auto px-6">
         <h2 className="font-black text-[24px] text-[#061e14]">Our Services</h2>
         <p className="text-[12px] text-slate-500 mt-1">Everything you need in one place</p>
@@ -37,7 +37,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PRICING - this makes the Pricing link work */}
+      {/* PRICING */}
       <section id="pricing" className="py-20 bg-[#f8fafc] border-t">
         <div className="max-w-[1280px] mx-auto px-6">
           <h2 className="font-black text-[24px] text-[#061e14]">Best Market Pricing</h2>
