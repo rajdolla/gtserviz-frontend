@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import Navbar from "../../components/Navbar";
 
 const products = [
   { name:"MTN 1GB - 30 Days", price:"₦350", cat:"Data Bundle", popular:true },
