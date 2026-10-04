@@ -1,27 +1,15 @@
 "use client";
-import Link from "next/link";
-import Image from "next/image";
-import { useState } from "react";
 import Footer from "../../components/Footer";
-
-const posts = [
-  { cat:"VTU BUSINESS", title:"How to Start a Profitable VTU Business in Nigeria in 2026", date:"Sep 28, 2026", read:"5 min read" },
-  { cat:"API", title:"GTSERVIZ API: Integrate Airtime & Data in 10 Minutes", date:"Sep 20, 2026", read:"4 min read" },
-  { cat:"ELECTRICITY", title:"Why Electricity Token Purchases Fail & How We Fix It", date:"Sep 15, 2026", read:"3 min read" },
-  { cat:"RESELLER", title:"Become a Reseller: Earn Up to 20% Commission Daily", date:"Sep 10, 2026", read:"6 min read" },
-];
-
+import Navbar from "../../components/Navbar";
 export default function BlogPage(){
-  const [open,setOpen]=useState(false);
   return (
     <div className="min-h-screen bg-[#f8fafc]">
-      <header className="fixed top-0 w-full z-[100] bg-[#061e14] border-b border-white/5 h-[68px]">
-        <div className="max-w-[1280px] mx-auto px-6 h-full flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2"><div className="w-9 h-9 bg-white rounded-full flex items-center justify-center"><Image src="/logo.png" alt="GT" width={36} height={36} /></div><span className="text-white font-black tracking-[0.15em] text-[14px]">GTSERVIZ</span></Link>
-          <nav className="hidden lg:flex gap-7 text-[13.5px] text-white/60"><Link href="/" className="hover:text-white">Home</Link><Link href="/api" className="hover:text-white">API</Link><Link href="/blog" className="text-[#00ff88] font-bold border-b-2 border-[#00ff88] pb-1">Blog</Link><Link href="/reseller" className="hover:text-white">Become a Reseller</Link></nav>
-          <Link href="/signup" className="hidden lg:block px-5 py-2.5 rounded-full bg-[#00A54F] text-white text-[13px] font-black">Create Account</Link>
-          <button onClick={()=>setOpen(!open)} className="lg:hidden w-10 h-10 rounded-full bg-white/10 text-white">{open?"✕":"☰"}</button>
-        </div>
+      <Navbar active="Blog" />
+      <section className="pt-[120px] max-w-[1280px] mx-auto px-6"><h1 className="text-[36px] font-black">Blog</h1><div className="grid md:grid-cols-3 gap-6 mt-8">{[1,2,3].map(i=><div key={i} className="bg-white border rounded-2xl p-6"><h3 className="font-bold text-[14px]">How to Start VTU Business in 2026</h3><p className="text-[11px] text-slate-400 mt-3">Sep 2026 • 5 min read</p></div>)}</div></section>
+      <div className="mt-16"><Footer /></div>
+    </div>
+  );
+}
       </header>
 
       <section className="pt-[120px] pb-10 max-w-[1280px] mx-auto px-6">
