@@ -2,19 +2,20 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import Footer from "../../components/Footer"; // <-- add this
 
-export default function Home() {
+const posts = [ ... ];
+
+export default function BlogPage(){
+  const [open,setOpen]=useState(false);
   return (
-    <>
-      <Navbar />
-      {/* your page content */}
-      <Footer />
-    </>
-  )
-}
+    <div className="min-h-screen bg-[#f8fafc]">
+      {/* your existing header + section code */}
 
+      <Footer />  {/* <-- add this before closing </div> */}
+    </div>
+  );
+}
 const products = [
   { name:"MTN 1GB - 30 Days", price:"₦350", cat:"Data Bundle", popular:true },
   { name:"Airtel 2GB - 30 Days", price:"₦700", cat:"Data Bundle", popular:false },
