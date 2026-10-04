@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import Navbar from "../../components/Navbar";
 
 export default function ResellerPage(){
   const [open,setOpen]=useState(false);
