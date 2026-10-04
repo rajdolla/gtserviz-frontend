@@ -3,21 +3,26 @@ import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-export default function Home() {
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+
+import Link from "next/link";
+import Image from "next/image";
+import { useState } from "react";
+import Footer from "../../components/Footer"; // <-- add this
+
+const posts = [ ... ];
+
+export default function BlogPage(){
+  const [open,setOpen]=useState(false);
   return (
-    <>
-      <Navbar />
-      {/* your page content */}
-      <Footer />
-    </>
-  )
+    <div className="min-h-screen bg-[#f8fafc]">
+      {/* your existing header + section code */}
+
+      <Footer />  {/* <-- add this before closing </div> */}
+    </div>
+  );
 }
-
-export default function Home() {
-  return (
-    <div className="min-h-screen bg-white">
-      <Navbar active="Home" />
-
       {/* HERO */}
       <section className="pt-[120px] bg-[#061e14] text-white">
         <div className="max-w-[1280px] mx-auto px-6 py-20 text-center">
