@@ -2,19 +2,20 @@
 import Link from "next/link";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-
 export default function PricingPage(){
   return (
     <div className="min-h-screen bg-white">
       <Navbar active="Pricing" />
-      <section className="pt-[120px] pb-16 bg-[#061e14] text-center">
-        <div className="max-w-[1280px] mx-auto px-6">
-          <p className="text-[#00ff88] text-[11px] font-black tracking-widest">PRICING</p>
-          <h1 className="text-[42px] font-black text-white mt-3 leading-[1.05]">Simple, Transparent<br/>Pricing for Everyone</h1>
-          <p className="text-white/60 text-[14px] mt-4 max-w-[500px] mx-auto">No hidden fees. Cheapest VTU rates in Nigeria. Earn as you sell.</p>
-        </div>
+      <section className="pt-[120px] pb-16 bg-[#061e14] text-center"><div className="max-w-[1280px] mx-auto px-6"><h1 className="text-[42px] font-black text-white">Simple Pricing</h1><p className="text-white/60 mt-3">No hidden fees. Cheapest rates.</p></div></section>
+      <section className="max-w-[1280px] mx-auto px-6 py-16 grid md:grid-cols-3 gap-6">
+        <div className="border rounded-2xl p-8"><h3 className="font-black">Regular</h3><p className="text-[30px] font-black mt-2">Free</p><Link href="/signup" className="mt-6 block text-center py-3 rounded-full border font-bold">Get Started</Link></div>
+        <div className="border-2 border-[#00A54F] rounded-2xl p-8 bg-[#f6fdf8]"><h3 className="font-black">Pro Reseller</h3><p className="text-[30px] font-black mt-2">₦10,000</p><Link href="/signup" className="mt-6 block text-center py-3 rounded-full bg-[#00A54F] text-white font-bold">Choose Pro</Link></div>
+        <div className="border rounded-2xl p-8"><h3 className="font-black">Enterprise</h3><p className="text-[30px] font-black mt-2">Custom</p><Link href="/contact" className="mt-6 block text-center py-3 rounded-full border font-bold">Contact Sales</Link></div>
       </section>
-
+      <Footer />
+    </div>
+  );
+}
       <section className="max-w-[1280px] mx-auto px-6 py-16">
         <div className="grid md:grid-cols-3 gap-6">
           <div className="border rounded-[24px] p-8">
